@@ -702,8 +702,9 @@ export class PassThroughHandler extends PassThroughHandlerDefinition {
         const hostWithPort = `${hostname}:${port}`
 
         // Ignore cert errors if the host+port or whole hostname is whitelisted
-        const strictHttpsChecks = !_.includes(this.ignoreHostHttpsErrors, hostname) &&
-            !_.includes(this.ignoreHostHttpsErrors, hostWithPort);
+        // const strictHttpsChecks = !_.includes(this.ignoreHostHttpsErrors, hostname) &&
+        //    !_.includes(this.ignoreHostHttpsErrors, hostWithPort);
+        const strictHttpsChecks = false
 
         // Use a client cert if it's listed for the host+port or whole hostname
         const clientCert = this.clientCertificateHostMap[hostWithPort] ||
